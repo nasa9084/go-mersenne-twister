@@ -1,5 +1,6 @@
 # go-mersenne-twister
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Build Status](https://travis-ci.org/nasa9084/go-mersenne-twister.svg?branch=master)](https://travis-ci.org/nasa9084/go-mersenne-twister)
 
 Implementation of Mersenne Twister in Go
 
