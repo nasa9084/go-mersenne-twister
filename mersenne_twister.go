@@ -3,7 +3,7 @@ package mt
 const (
 	n          = 624
 	m          = 397
-	matrix_a   = 0x9908b0df
+	matrixA   = 0x9908b0df
 	upperMask = 0x80000000
 	lowerMask = 0x7fffffff
 )
@@ -60,7 +60,7 @@ func Init_by_array(init_key []uint32) {
 /* generate a random number */
 func Genrand_int32() uint32 {
 	var y uint32
-	var mag01 [2]uint32 = [2]uint32{0x0, matrix_a}
+	var mag01 [2]uint32 = [2]uint32{0x0, matrixA}
 
 	if mti >= n {
 		var kk int
