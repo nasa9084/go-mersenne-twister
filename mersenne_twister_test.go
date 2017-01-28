@@ -1,7 +1,8 @@
-package mt
+package mt_test
 
 import (
 	"fmt"
+	"github.com/nasa9084/go-mersenne-twister"
 	"testing"
 )
 
@@ -413,15 +414,15 @@ var expectedFloat = []float64{
 
 func TestMt(t *testing.T) {
 	key := []uint32{0x123, 0x234, 0x345, 0x456}
-	InitByArray(key)
+	mt.InitByArray(key)
 	for _, want := range expectedInt {
-		have := GenrandInt32()
+		have := mt.GenrandInt32()
 		if have != want {
 			t.Errorf("wrong output: %d != %d", have, want)
 		}
 	}
 	for _, want := range expectedFloat {
-		have := GenrandReal2()
+		have := mt.GenrandReal2()
 		if fmt.Sprintf("%.8f", have) != fmt.Sprintf("%.8f", want) {
 			t.Errorf("wrong output: %.8f != %.8f", have, want)
 		}
