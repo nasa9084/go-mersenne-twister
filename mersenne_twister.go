@@ -12,7 +12,7 @@ var mt [n]uint32
 var mti uint32 = n + 1
 
 /* init with a seed */
-func Init_genrand(s uint32) {
+func InitGenrand(s uint32) {
 	mt[0] = s & 0xffffffff
 	for mti = 1; mti < n; mti++ {
 		mt[mti] = (1812433253*(mt[mti-1]^(mt[mti-1]>>30)) + mti)
@@ -21,9 +21,9 @@ func Init_genrand(s uint32) {
 }
 
 /* init with a slice */
-func Init_by_array(init_key []uint32) {
+func InitByArray(init_key []uint32) {
 	var i, j, k uint32
-	Init_genrand(19650218)
+	InitGenrand(19650218)
 	i = 1
 	j = 0
 	var key_length uint32 = uint32(len(init_key))
@@ -58,7 +58,7 @@ func Init_by_array(init_key []uint32) {
 }
 
 /* generate a random number */
-func Genrand_int32() uint32 {
+func GenrandInt32() uint32 {
 	var y uint32
 	var mag01 [2]uint32 = [2]uint32{0x0, matrixA}
 
@@ -66,7 +66,7 @@ func Genrand_int32() uint32 {
 		var kk int
 
 		if mti == n+1 {
-			Init_genrand(5489)
+			InitGenrand(5489)
 		}
 		for kk = 0; kk < n-m; kk++ {
 			y = (mt[kk] & upperMask) | (mt[kk+1] & lowerMask)
@@ -94,28 +94,28 @@ func Genrand_int32() uint32 {
 }
 
 /* generate a random number */
-func Genrand_int31() uint32 {
-	return uint32(Genrand_int32() >> 1)
+func GenrandInt31() uint32 {
+	return uint32(GenrandInt32() >> 1)
 }
 
 /* generate a random number */
-func Genrand_real1() float64 {
-	return float64(Genrand_int32()) * (1.0 / 4294967295.0)
+func GenrandReal1() float64 {
+	return float64(GenrandInt32()) * (1.0 / 4294967295.0)
 }
 
 /* generate a random float64 number */
-func Genrand_real2() float64 {
-	return float64(Genrand_int32()) * (1.0 / 4294967296.0)
+func GenrandReal2() float64 {
+	return float64(GenrandInt32()) * (1.0 / 4294967296.0)
 }
 
 /* generate a random float64 number */
-func genrand_real3() float64 {
-	return ((float64(Genrand_int32())) + 0.5) * (1.0 / 4294967296.0)
+func genrandReal3() float64 {
+	return ((float64(GenrandInt32())) + 0.5) * (1.0 / 4294967296.0)
 }
 
 /* generate a random number with 53-bit resolution*/
-func genrand_res53() float64 {
-	var a uint32 = Genrand_int32() >> 5
-	var b uint32 = Genrand_int32() >> 6
+func genrandRes53() float64 {
+	var a uint32 = GenrandInt32() >> 5
+	var b uint32 = GenrandInt32() >> 6
 	return (float64(a)*67108864.0 + float64(b)) * (1.0 / 9007199254740992.0)
 }

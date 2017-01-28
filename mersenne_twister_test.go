@@ -413,15 +413,15 @@ var expected_float []float64 = []float64{
 
 func TestMt(t *testing.T) {
 	key := []uint32{0x123, 0x234, 0x345, 0x456}
-	Init_by_array(key)
+	InitByArray(key)
 	for _, want := range expected_int {
-		have := Genrand_int32()
+		have := GenrandInt32()
 		if have != want {
 			t.Errorf("wrong output: %d != %d", have, want)
 		}
 	}
 	for _, want := range expected_float {
-		have := Genrand_real2()
+		have := GenrandReal2()
 		if fmt.Sprintf("%.8f", have) != fmt.Sprintf("%.8f", want) {
 			t.Errorf("wrong output: %.8f != %.8f", have, want)
 		}
