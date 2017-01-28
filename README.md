@@ -12,7 +12,7 @@ package main
 
 import (
     "fmt"
-    "github.com/nasa9084/go-meersenne-twister"
+    "github.com/nasa9084/go-mersenne-twister"
 )
 
 func main() {
