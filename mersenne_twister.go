@@ -26,7 +26,7 @@ func InitByArray(initKey []uint32) {
 	InitGenrand(19650218)
 	i = 1
 	j = 0
-	var keyLength uint32 = uint32(len(initKey))
+	keyLength := uint32(len(initKey))
 	k = keyLength
 	if n > keyLength {
 		k = n
