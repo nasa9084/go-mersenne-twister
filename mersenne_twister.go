@@ -113,12 +113,12 @@ func GenrandReal2() float64 {
 
 // GenrandReal3 generates a 32bit (0, 1) real random  number
 // note: return type is float64, not float32
-func genrandReal3() float64 {
+func GenrandReal3() float64 {
 	return ((float64(GenrandInt32())) + 0.5) * (1.0 / 4294967296.0)
 }
 
 // GenrandRes53 generates a [0, 1) random number with 53-bit resolution
-func genrandRes53() float64 {
+func GenrandRes53() float64 {
 	a := GenrandInt32() >> 5
 	b := GenrandInt32() >> 6
 	return (float64(a)*67108864.0 + float64(b)) * (1.0 / 9007199254740992.0)
