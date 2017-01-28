@@ -60,7 +60,7 @@ func InitByArray(initKey []uint32) {
 /* GenrandInt32 generates a random 32bit unsigned int number */
 func GenrandInt32() uint32 {
 	var y uint32
-	var mag01 [2]uint32 = [2]uint32{0x0, matrixA}
+	mag01 := [2]uint32{0x0, matrixA}
 
 	if mti >= n {
 		var kk int
