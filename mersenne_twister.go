@@ -11,7 +11,7 @@ const (
 var mt [n]uint32
 var mti uint32 = n + 1
 
-/* InitGenrand initializes random sequence with a seed value */
+// InitGenrand initializes random sequence with a seed value
 func InitGenrand(s uint32) {
 	mt[0] = s & 0xffffffff
 	for mti = 1; mti < n; mti++ {
@@ -20,7 +20,7 @@ func InitGenrand(s uint32) {
 	}
 }
 
-/* InitByArray initializes random sequence with a slice */
+// InitByArray initializes random sequence with a slice
 func InitByArray(initKey []uint32) {
 	var i, j, k uint32
 	InitGenrand(19650218)
@@ -57,7 +57,7 @@ func InitByArray(initKey []uint32) {
 	mt[0] = 0x80000000
 }
 
-/* GenrandInt32 generates a random 32bit unsigned int number */
+// GenrandInt32 generates a random 32bit unsigned int number
 func GenrandInt32() uint32 {
 	var y uint32
 	mag01 := [2]uint32{0x0, matrixA}
@@ -93,31 +93,31 @@ func GenrandInt32() uint32 {
 	return y
 }
 
-/* GenrandInt31 generates a 31bit unsigned int random number */
-/* note: return type is uint32 */
+// GenrandInt31 generates a 31bit unsigned int random number
+// note: return type is uint32
 func GenrandInt31() uint32 {
 	return uint32(GenrandInt32() >> 1)
 }
 
-/* GenrandReal1 generates a 32bit [0, 1] real random number */
-/* note: return type is float64, not float32 */
+// GenrandReal1 generates a 32bit [0, 1] real random number
+// note: return type is float64, not float32
 func GenrandReal1() float64 {
 	return float64(GenrandInt32()) * (1.0 / 4294967295.0)
 }
 
-/* GenrandReal2 generates a 32bit [0, 1) real random number */
-/* note: return type is float64, not float32 */
+// GenrandReal2 generates a 32bit [0, 1) real random number
+// note: return type is float64, not float32
 func GenrandReal2() float64 {
 	return float64(GenrandInt32()) * (1.0 / 4294967296.0)
 }
 
-/* GenrandReal3 generates a 32bit (0, 1) real random  number */
-/* note: return type is float64, not float32 */
+// GenrandReal3 generates a 32bit (0, 1) real random  number
+// note: return type is float64, not float32
 func genrandReal3() float64 {
 	return ((float64(GenrandInt32())) + 0.5) * (1.0 / 4294967296.0)
 }
 
-/* GenrandRes53 generates a [0, 1) random number with 53-bit resolution*/
+// GenrandRes53 generates a [0, 1) random number with 53-bit resolution
 func genrandRes53() float64 {
 	a := GenrandInt32() >> 5
 	b := GenrandInt32() >> 6
