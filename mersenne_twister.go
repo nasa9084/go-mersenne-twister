@@ -119,7 +119,7 @@ func genrandReal3() float64 {
 
 /* GenrandRes53 generates a [0, 1) random number with 53-bit resolution*/
 func genrandRes53() float64 {
-	var a uint32 = GenrandInt32() >> 5
-	var b uint32 = GenrandInt32() >> 6
+	a := GenrandInt32() >> 5
+	b := GenrandInt32() >> 6
 	return (float64(a)*67108864.0 + float64(b)) * (1.0 / 9007199254740992.0)
 }
