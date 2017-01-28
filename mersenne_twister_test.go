@@ -208,7 +208,7 @@ var expectedInt = []uint32{
 	2643151863, 3896204135, 2416995901, 1397735321, 3460025646,
 }
 
-var expected_float = []float64{
+var expectedFloat = []float64{
 	0.76275443, 0.99000644, 0.98670464, 0.10143112, 0.27933125,
 	0.69867227, 0.94218740, 0.03427201, 0.78842173, 0.28180608,
 	0.92179002, 0.20785655, 0.54534773, 0.69644020, 0.38107718,
@@ -420,7 +420,7 @@ func TestMt(t *testing.T) {
 			t.Errorf("wrong output: %d != %d", have, want)
 		}
 	}
-	for _, want := range expected_float {
+	for _, want := range expectedFloat {
 		have := GenrandReal2()
 		if fmt.Sprintf("%.8f", have) != fmt.Sprintf("%.8f", want) {
 			t.Errorf("wrong output: %.8f != %.8f", have, want)
