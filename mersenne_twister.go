@@ -1,8 +1,8 @@
 package mt
 
 const (
-	n          = 624
-	m          = 397
+	n         = 624
+	m         = 397
 	matrixA   = 0x9908b0df
 	upperMask = 0x80000000
 	lowerMask = 0x7fffffff
