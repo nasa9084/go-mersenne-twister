@@ -7,7 +7,7 @@ import (
 
 // ExampleMersenneTwisterInt32 is an example of
 // 32bit unsigned int random value generation
-func ExampleMersenneTwisterInt32() {
+func ExampleGenrandInt32() {
 	key := []uint32{0x123, 0x234, 0x345, 0x456}
 	mt.InitByArray(key)
 	fmt.Printf("%d", mt.GenrandInt32())
@@ -17,7 +17,7 @@ func ExampleMersenneTwisterInt32() {
 
 // ExampleMersenneTwisterFloat64 is an example of
 // 32bit real random value generation
-func ExampleMersenneTwisterFloat64() {
+func ExampleGenrandReal2() {
 	key := []uint32{0x123, 0x234, 0x345, 0x456}
 	mt.InitByArray(key)
 	fmt.Printf("%.8f", mt.GenrandReal2())
