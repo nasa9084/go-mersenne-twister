@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var expected_int []uint32 = []uint32{
+var expectedInt []uint32 = []uint32{
 	1067595299, 955945823, 477289528, 4107218783, 4228976476,
 	3344332714, 3355579695, 227628506, 810200273, 2591290167,
 	2560260675, 3242736208, 646746669, 1479517882, 4245472273,
@@ -414,7 +414,7 @@ var expected_float []float64 = []float64{
 func TestMt(t *testing.T) {
 	key := []uint32{0x123, 0x234, 0x345, 0x456}
 	InitByArray(key)
-	for _, want := range expected_int {
+	for _, want := range expectedInt {
 		have := GenrandInt32()
 		if have != want {
 			t.Errorf("wrong output: %d != %d", have, want)
