@@ -3,7 +3,7 @@ package mt_test
 import (
 	"fmt"
 	"testing"
-	"github.com/edolphin-ydf/go-mersenne-twister"
+	"github.com/nasa9084/go-mersenne-twister"
 )
 
 var expectedInt = []uint32{

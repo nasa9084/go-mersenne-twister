@@ -2,7 +2,7 @@ package mt_test
 
 import (
 	"fmt"
-	"github.com/edolphin-ydf/go-mersenne-twister"
+	"github.com/nasa9084/go-mersenne-twister"
 )
 
 // ExampleMersenneTwisterInt32 is an example of
