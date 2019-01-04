@@ -16,8 +16,8 @@ import (
 )
 
 func main() {
-    mt.Init_genrand(0) // '0' is a seed. choose freely.
-    n := mt.Genrand_int32() // generate int 32 random value.
+    mt.InitGenrand(0) // '0' is a seed. choose freely.
+    n := mt.GenrandInt32() // generate int 32 random value.
     fmt.Printf("%d", n)
 }
 ```
